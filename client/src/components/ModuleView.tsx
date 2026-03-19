@@ -14,6 +14,8 @@ import PaymentDecisionTree from "./PaymentDecisionTree";
 import SKUFormatter from "./SKUFormatter";
 import ProfitCalculator from "./ProfitCalculator";
 import ServicesSection from "./ServicesSection";
+import SOPDownloads from "./SOPDownloads";
+import { getSopsForModule } from "@/data/sopResources";
 
 interface ModuleViewProps {
   module: Module;
@@ -274,6 +276,9 @@ export default function ModuleView({ module, onNext, onPrev, hasNext, hasPrev }:
       {module.hasVideo && module.videoTitle && (
         <VideoPlaceholder title={module.videoTitle} />
       )}
+
+      {/* SOP Downloads for this module */}
+      <SOPDownloads sops={getSopsForModule(module.id)} />
 
       {/* Steps with special interactive content */}
       <div>

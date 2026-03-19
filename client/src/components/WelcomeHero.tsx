@@ -3,13 +3,16 @@
 
 import { modules } from "@/data/courseData";
 import { useProgress } from "@/contexts/ProgressContext";
-import { Play, BookOpen, ChevronRight, TrendingUp, Users, ShoppingCart, Award } from "lucide-react";
+import { Play, BookOpen, ChevronRight, TrendingUp, ShoppingCart, Award, Download } from "lucide-react";
+import AllResourcesSection from "./AllResourcesSection";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663439371575/FrK4YVnjeGBhbojuyvbqHW/hero-banner-Ve8NgKdGKPNbuwtCoE5Nme.webp";
 const WALMART_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663439371575/FrK4YVnjeGBhbojuyvbqHW/welcome-hero-QnWeko9CUASbRmVU3sEzpB.webp";
 
 interface WelcomeHeroProps {
   onStart: () => void;
+  showResources?: boolean;
+  onToggleResources?: () => void;
 }
 
 const stats = [
@@ -27,7 +30,7 @@ const walmartBenefits = [
   { icon: "📈", text: "Rapidly growing platform with less saturation" },
 ];
 
-export default function WelcomeHero({ onStart }: WelcomeHeroProps) {
+export default function WelcomeHero({ onStart, showResources = false, onToggleResources }: WelcomeHeroProps) {
   const { getTotalProgress, completedModules } = useProgress();
   const progress = getTotalProgress();
   const isStarted = progress > 0;
@@ -88,6 +91,10 @@ export default function WelcomeHero({ onStart }: WelcomeHeroProps) {
                 <button onClick={onStart} className="lb-btn-secondary text-base py-3 px-6">
                   <BookOpen size={16} />
                   View Modules
+                </button>
+                <button onClick={onToggleResources} className="lb-btn-secondary text-base py-3 px-6">
+                  <Download size={16} />
+                  {showResources ? 'Hide Resources' : 'All SOPs'}
                 </button>
               </div>
             </div>
@@ -209,6 +216,9 @@ export default function WelcomeHero({ onStart }: WelcomeHeroProps) {
           </div>
         </div>
       </div>
+
+      {/* All Resources Section */}
+      {showResources && <AllResourcesSection />}
 
       {/* Strategy Section */}
       <div className="py-12 px-4" style={{ background: '#FEE7DA' }}>

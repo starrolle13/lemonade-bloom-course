@@ -13,6 +13,7 @@ import { Menu, X, Home, ChevronRight, BookOpen } from "lucide-react";
 export default function HomePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showCourse, setShowCourse] = useState(false);
+  const [showResources, setShowResources] = useState(false);
   const { activeModule, setActiveModule } = useProgress();
   const mainRef = useRef<HTMLDivElement>(null);
 
@@ -126,7 +127,11 @@ export default function HomePage() {
           style={{ background: '#FAFAF8' }}
         >
           {!showCourse ? (
-            <WelcomeHero onStart={handleStart} />
+            <WelcomeHero
+              onStart={handleStart}
+              showResources={showResources}
+              onToggleResources={() => setShowResources(r => !r)}
+            />
           ) : (
             currentModule && (
               <ModuleView

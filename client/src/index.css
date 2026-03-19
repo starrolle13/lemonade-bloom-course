@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* 
+  Lemonade Bloom Course — Design System
+  Design Movement: Warm Retro Zine meets Digital Academy
+  Colors: Pink #FDBEC0, Orange #D0804A, Cream #FEE9CE, Soft Beige #FEE7DA, White #FFFFFF, Text #1A1A1A
+  Typography: Pacifico (display), Nunito (body), Lobster (accent)
+*/
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -27,11 +34,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -40,77 +42,44 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  /* Brand custom colors */
+  --color-lb-pink: #FDBEC0;
+  --color-lb-orange: #D0804A;
+  --color-lb-cream: #FEE9CE;
+  --color-lb-beige: #FEE7DA;
+  --color-lb-text: #1A1A1A;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --radius: 0.75rem;
+  /* Lemonade Bloom brand palette */
+  --background: oklch(0.98 0.012 60);        /* warm cream #FEE9CE */
+  --foreground: oklch(0.13 0.01 30);          /* dark text #1A1A1A */
+  --card: oklch(1 0 0);                        /* white cards */
+  --card-foreground: oklch(0.13 0.01 30);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.13 0.01 30);
+  --primary: oklch(0.60 0.12 42);             /* orange #D0804A */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.025 10);          /* soft pink #FDBEC0 */
+  --secondary-foreground: oklch(0.13 0.01 30);
+  --muted: oklch(0.96 0.015 50);              /* soft beige #FEE7DA */
+  --muted-foreground: oklch(0.45 0.04 40);
+  --accent: oklch(0.92 0.04 55);              /* cream accent */
+  --accent-foreground: oklch(0.13 0.01 30);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --border: oklch(0.88 0.03 50);
+  --input: oklch(0.92 0.02 50);
+  --ring: oklch(0.60 0.12 42);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.13 0.01 30);
+  --sidebar-primary: oklch(0.60 0.12 42);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.025 10);
+  --sidebar-accent-foreground: oklch(0.13 0.01 30);
+  --sidebar-border: oklch(0.88 0.03 50);
+  --sidebar-ring: oklch(0.60 0.12 42);
 }
 
 @layer base {
@@ -119,6 +88,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,24 +104,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +119,249 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+
+  /* Lemonade Bloom Brand Utilities */
+  .lb-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(208, 128, 74, 0.08), 0 1px 4px rgba(208, 128, 74, 0.06);
+    border: 1px solid rgba(208, 128, 74, 0.12);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .lb-card:hover {
+    box-shadow: 0 6px 24px rgba(208, 128, 74, 0.14), 0 2px 8px rgba(208, 128, 74, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .lb-step-badge {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #D0804A;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  .lb-module-badge {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D0804A, #e8955e);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(208, 128, 74, 0.35);
+  }
+
+  .lb-progress-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: #FEE7DA;
+    overflow: hidden;
+  }
+  .lb-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #D0804A, #FDBEC0);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .lb-btn-primary {
+    background: #D0804A;
+    color: white;
+    border-radius: 2rem;
+    padding: 0.625rem 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(208, 128, 74, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .lb-btn-primary:hover {
+    background: #b86e3a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(208, 128, 74, 0.4);
+  }
+
+  .lb-btn-secondary {
+    background: #FDBEC0;
+    color: #1A1A1A;
+    border-radius: 2rem;
+    padding: 0.625rem 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .lb-btn-secondary:hover {
+    background: #f5a8aa;
+    transform: translateY(-1px);
+  }
+
+  .lb-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #FEE7DA;
+    color: #D0804A;
+    border-radius: 2rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .lb-highlight {
+    background: linear-gradient(120deg, #FDBEC0 0%, #FEE9CE 100%);
+    border-radius: 0.5rem;
+    padding: 0.125rem 0.5rem;
+  }
+
+  .lb-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #D0804A;
+    opacity: 0.4;
+    margin: 1.5rem 0;
+  }
+  .lb-divider::before,
+  .lb-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .lb-video-placeholder {
+    background: linear-gradient(135deg, #FEE7DA 0%, #FDBEC0 50%, #FEE9CE 100%);
+    border-radius: 1rem;
+    border: 2px dashed #D0804A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .lb-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    transition: background 0.15s;
+  }
+  .lb-checklist-item:hover {
+    background: #FEE9CE;
+  }
+
+  .lb-important-box {
+    background: linear-gradient(135deg, #FEE7DA, #FDBEC0);
+    border-left: 4px solid #D0804A;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 1rem 1.25rem;
+  }
+
+  .lb-tip-box {
+    background: #FEE9CE;
+    border: 1px solid rgba(208, 128, 74, 0.25);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .lb-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #6b5a4e;
+    text-decoration: none;
+  }
+  .lb-sidebar-item:hover {
+    background: #FEE9CE;
+    color: #D0804A;
+  }
+  .lb-sidebar-item.active {
+    background: linear-gradient(135deg, #FDBEC0, #FEE9CE);
+    color: #D0804A;
+    font-weight: 700;
+  }
+  .lb-sidebar-item.completed {
+    color: #D0804A;
+    opacity: 0.7;
+  }
+
+  /* Daisy decorative element */
+  .lb-daisy {
+    display: inline-block;
+    font-size: 1.25rem;
+    animation: lb-spin-slow 8s linear infinite;
+  }
+
+  @keyframes lb-spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes lb-fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .lb-fade-up {
+    animation: lb-fade-up 0.5s ease forwards;
+  }
+
+  .lb-stagger-1 { animation-delay: 0.05s; }
+  .lb-stagger-2 { animation-delay: 0.1s; }
+  .lb-stagger-3 { animation-delay: 0.15s; }
+  .lb-stagger-4 { animation-delay: 0.2s; }
+  .lb-stagger-5 { animation-delay: 0.25s; }
+
+  /* Font families */
+  .font-pacifico { font-family: 'Pacifico', cursive; }
+  .font-lobster { font-family: 'Lobster', cursive; }
+  .font-nunito { font-family: 'Nunito', sans-serif; }
 }
